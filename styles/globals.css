@@ -6,8 +6,9 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Warna teks tebal diubah menjadi teal yang lebih cerah */
 strong {
-  @apply text-rose-400;
+  @apply text-teal-500;
 }
 
 @font-face {
@@ -23,23 +24,27 @@ strong {
   animation: highlightVerse 5s;
 }
 
+/* Animasi sorotan diubah menjadi warna teal yang lebih pekat untuk kontras */
 @keyframes highlightVerse {
   0% {
-    @apply text-rose-500;
+    @apply text-teal-600;
   }
   90% {
-    @apply text-rose-500;
+    @apply text-teal-600;
   }
   100% {
     @apply text-current;
   }
 }
 
+/* Warna bayangan diubah agar serasi dengan warna sorotan (teal-600) */
 .verse-number {
-  filter: drop-shadow(0px 0px 1px rgb(251 113 133));
+  filter: drop-shadow(0px 0px 1.5px rgb(13 148 136));
 }
+
+/* Latar belakang bingkai nomor ayat diubah menjadi teal muda */
 .verse-number > * {
-  @apply py-2 text-center w-10 bg-rose-200;
+  @apply py-2 text-center w-10 bg-teal-200; /* Latar belakang diubah */
   white-space: nowrap;
   clip-path: polygon(
     50% 0,
@@ -61,10 +66,14 @@ strong {
   );
 }
 
+/* Latar belakang panel audio diubah menjadi warna teal yang sangat terang */
 audio::-webkit-media-controls-panel {
-  @apply bg-rose-50;
+  @apply bg-teal-50;
 }
+
+/* Warna teks pada panel audio diubah agar serasi dengan warna sorotan */
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
-  @apply text-rose-500;
-}
+  @apply text-teal-600;
+  }
+  
