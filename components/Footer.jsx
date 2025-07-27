@@ -3,9 +3,9 @@ export default function Footer() {
     <>
       <footer className="p-3 text-center mb-20">
         <p>
-          Powered : by ❤ {' '}
+          Powered by:❤{' '}
           <a href="https://islamiah.fakta.blue" target="_blank">
-            FAKTA_BLUE
+            FAKTA_BLUE❤
           </a>{' '}
           {/* untuk Sweet heartnya */}
         </p>
