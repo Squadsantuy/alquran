@@ -14,4 +14,4 @@ export default function Footer() {
   )
 }
 
-// 16/02/2022 16.00 WITA
+// 28/07/2025 06:00 WIB
