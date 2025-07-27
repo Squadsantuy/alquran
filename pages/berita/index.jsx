@@ -11,18 +11,33 @@ export default function Berita() {
 
   // Fetch data
   useEffect(() => {
-    setLoading(true)
-    fetch('https://api-berita-indonesia.vercel.app/republika/islam/')
-      .then((res) => res.json())
-      .then(({ data }) => {
-        setBerita(data.posts)
-        setLoading(false)
-      })
-      .catch(() => {
-        setLoading(false)
-        setError(true)
-      })
-  }, [])
+  const fetchAllBerita = async () => {
+    setLoading(true);
+    try {
+      // Daftar sumber berita yang ingin diambil
+      const urls = [
+        'https://api-berita-indonesia.vercel.app/republika/islam/',
+        'https://api-berita-indonesia.vercel.app/cnn/teknologi/',
+        'https://api-berita-indonesia.vercel.app/cnbc/syariah/'
+      ];
+
+      // Mengambil data dari semua URL secara paralel
+      const requests = urls.map(url => fetch(url).then(res => res.json()));
+      const responses = await Promise.all(requests);
+
+      // Menggabungkan semua hasil berita (posts) menjadi satu array
+      const allPosts = responses.flatMap(response => response.data.posts);
+
+      setBerita(allPosts);
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchAllBerita();
+}, []);
 
   return (
     <Layout name="Berita">
