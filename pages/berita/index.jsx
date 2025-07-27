@@ -17,7 +17,7 @@ export default function Berita() {
       // Daftar sumber berita yang ingin diambil
       const urls = [
         'https://api-berita-indonesia.vercel.app/republika/islam/',
-        'https://api-berita-indonesia.vercel.app/cnn/teknologi/',
+        'https://api-berita-indonesia.vercel.app/sindonews/kalam/',
         'https://api-berita-indonesia.vercel.app/cnbc/syariah/'
       ];
 
