@@ -95,12 +95,12 @@ export default function BottomNavigation() {
   }, [])
 
   return (
-    <div className="fixed bottom-0 inset-x-0 bg-rose-500 text-white grid grid-cols-4 text-center">
+    <div className="fixed bottom-0 inset-x-0 bg-blue-500 text-white grid grid-cols-4 text-center">
       {navs.map(({ name, icon, url }, i) => (
         <Link
           href={url}
           key={i}
-          className={url === active ? 'pt-2 pb-1 bg-rose-600' : 'pt-2 pb-1'}
+          className={url === active ? 'pt-2 pb-1 bg-blue-600' : 'pt-2 pb-1'}
         >
           {icon}
           <span className="text-sm">{name}</span>
