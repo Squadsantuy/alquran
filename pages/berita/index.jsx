@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react'
 import BeritaCard from '../../components/berita/BeritaCard'
 import ErrorCard from '../../components/ErrorCards'
