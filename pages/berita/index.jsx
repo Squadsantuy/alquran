@@ -18,7 +18,7 @@ useEffect(() => {
       const urls = [
         'https://api-berita-indonesia.vercel.app/republika/islam/',
         'https://api-berita-indonesia.vercel.app/cnbc/syariah/',
-        'https://api-berita-indonesia.vercel.app/republika/khasanah/'
+        'https://api-berita-indonesia.vercel.app/republika/khasanah/',
         'https://api-berita-indonesia.vercel.app/sindonews/kalam/'
       ];
 
