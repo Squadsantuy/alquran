@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react'
 import BeritaCard from '../../components/berita/BeritaCard'
 import ErrorCard from '../../components/ErrorCards'
@@ -10,34 +11,20 @@ export default function Berita() {
   const [error, setError] = useState(false)
 
   // Fetch data
-useEffect(() => {
-  const fetchAllBerita = async () => {
-    setLoading(true);
-    try {
-      // Daftar sumber berita yang ingin diambil
-      const urls = [
-        'https://api-berita-indonesia.vercel.app/republika/islam/',
-        'https://api-berita-indonesia.vercel.app/republika/khasanah/',
-        'https://api-berita-indonesia.vercel.app/cnbc/syariah/'
-      ];
+  useEffect(() => {
+    setLoading(true)
+    fetch('https://api-berita-indonesia.vercel.app/republika/islam/')
+      .then((res) => res.json())
+      .then(({ data }) => {
+        setBerita(data.posts)
+        setLoading(false)
+      })
+      .catch(() => {
+        setLoading(false)
+        setError(true)
+      })
+  }, [])
 
-      // Mengambil data dari semua URL secara paralel
-      const requests = urls.map(url => fetch(url).then(res => res.json()));
-      const responses = await Promise.all(requests);
-
-      // Menggabungkan semua hasil berita (posts) menjadi satu array
-      const allPosts = responses.flatMap(response => response.data.posts);
-
-      setBerita(allPosts);
-    } catch (error) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  fetchAllBerita();
-}, []);
   return (
     <Layout name="Berita">
       <h1 className="text-3xl font-bold text-rose-500 mb-3">Berita Islamic</h1>
@@ -58,4 +45,4 @@ useEffect(() => {
       )}
     </Layout>
   )
-    }
+  }
