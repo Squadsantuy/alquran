@@ -64,8 +64,8 @@ export default function VerseCard({ verse, options }) {
       className={options?.offsetOn && 'mb-4 -mt-16 pt-16'}
     >
       <div onDoubleClick={() => setDisplayMenu(!displayMenu)} className="flex">
-        <div className="verse-number font-bold text-rose-500 mr-3">
-          <div className="sticky top-14 bg-rose-200 px-3 py-1.5 rounded-full">
+        <div className="verse-number font-bold text-green-500 mr-3">
+          <div className="sticky top-14 bg-green-200 px-3 py-1.5 rounded-full">
             {number.inSurah}
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function VerseCard({ verse, options }) {
           {/* Copy link button */}
           <div
             title="Salin link ayat"
-            className="flex items-center gap-2 cursor-pointer hover:text-rose-500 duration-300"
+            className="flex items-center gap-2 cursor-pointer hover:text-green-500 duration-300"
             onClick={() => copyVerseLink(verseLink)}
           >
             {!copied ? <ClipboardIcon /> : <ClipboardCheckFill />}
@@ -128,7 +128,7 @@ export default function VerseCard({ verse, options }) {
           {options?.showLastReadButton && (
             <div
               title="Tandai terakhir dibaca"
-              className="flex items-center gap-2 cursor-pointer hover:text-rose-500 duration-300"
+              className="flex items-center gap-2 cursor-pointer hover:text-green-500 duration-300"
               onClick={() => setLastRead({ ...verse, link: verseLink })}
             >
               {lastRead?.number.inQuran !== number.inQuran ? (
