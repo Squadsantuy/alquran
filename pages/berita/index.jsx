@@ -16,11 +16,10 @@ export default function Berita() {
     try {
       // Daftar sumber berita yang ingin diambil
       const urls = [
-    'https://api-berita-indonesia.vercel.app/republika/islam/',
-    'https://api-berita-indonesia.vercel.app/republika/khasanah/',
-    'https://api-berita-indonesia.vercel.app/sindonews/kalam/',
-    'https://api-berita-indonesia.vercel.app/antara/terbaru/'
-  ];
+        'https://api-berita-indonesia.vercel.app/republika/islam/',
+        'https://api-berita-indonesia.vercel.app/sindonews/kalam/',
+        'https://api-berita-indonesia.vercel.app/antara/terbaru/'
+      ];
 
       // Mengambil data dari semua URL secara paralel
       const requests = urls.map(url => fetch(url).then(res => res.json()));
