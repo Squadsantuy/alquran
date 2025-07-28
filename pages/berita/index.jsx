@@ -18,8 +18,7 @@ export default function Berita() {
       const urls = [
         'https://api-berita-indonesia.vercel.app/republika/islam/',
         'https://api-berita-indonesia.vercel.app/sindonews/kalam/',
-        'https://api-berita-indonesia.vercel.app/republika/khasanah/',
-        'https://api-berita-indonesia.vercel.app/antara/terbaru/'
+        'https://api-berita-indonesia.vercel.app/republika/khasanah/'
       ];
 
       // Mengambil data dari semua URL secara paralel
