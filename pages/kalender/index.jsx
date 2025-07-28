@@ -55,7 +55,7 @@ export default function Kalender() {
 
   return (
     <Layout name="Kalender">
-      <h1 className="text-3xl font-bold text-green-500 mb-3">Kalender</h1>
+      <h1 className="text-3xl font-bold text-rose-500 mb-3">Kalender</h1>
 
       <div className="text-center mb-3">
         <p>
